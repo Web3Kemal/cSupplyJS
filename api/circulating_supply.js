@@ -21,14 +21,14 @@ module.exports = async (req, res) => {
 
 async function getTotalSupply() {
   const response = await axios.get(
-    'https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0x922722e9ef614ec9a3e94b78496e92abfbb5a624&apikey=YEMEFWMH1EGKM3IG79DI7UB2FRBQ9KFAFD'
+    'https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0x922722e9ef614ec9a3e94b78496e92abfbb5a624&apikey=<BSCAPIKEY>'
   );
   return BigInt(response.data.result);
 }
 
 async function getBurnedSupply() {
   const response = await axios.get(
-    'https://api.bscscan.com/api?module=account&action=tokenbalance&contractaddress=0x922722e9ef614ec9a3e94b78496e92abfbb5a624&address=0x000000000000000000000000000000000000dead&tag=latest&apikey=YEMEFWMH1EGKM3IG79DI7UB2FRBQ9KFAFD'
+    'https://api.bscscan.com/api?module=account&action=tokenbalance&contractaddress=0x922722e9ef614ec9a3e94b78496e92abfbb5a624&address=0x000000000000000000000000000000000000dead&tag=latest&apikey=<BSCAPIKEY>'
   );
   return BigInt(response.data.result);
 }
